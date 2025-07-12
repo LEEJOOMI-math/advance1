@@ -1,0 +1,227 @@
+/* style.css */
+
+/* Custom font-family for Inter */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0fdf4; /* Very light green background */
+    color: #334155; /* Darker gray-blue for general text */
+}
+
+/* Main container styling */
+.container {
+    background-color: #ffffff;
+    border-radius: 1.5rem; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    padding: 2.5rem; /* Ample padding */
+    max-width: 960px; /* Max width for readability */
+    margin: 2.5rem auto; /* Center the container */
+    border: 1px solid #dcfce7; /* Light green border */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-size: 3rem; /* Larger title */
+    font-weight: 800; /* Extra bold */
+    color: #166534; /* Dark green for main title */
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #dcfce7; /* Light green background for title */
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #22c55e; /* Bright green for subtitle */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.125rem;
+    color: #4b5563;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: #ecfdf5; /* Very light green for sections */
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #a7f3d0; /* Soft green border */
+}
+
+section h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #047857; /* Medium green for section titles */
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #6ee7b7; /* Green border bottom */
+    padding-bottom: 0.5rem;
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+/* Highlighted text within lists */
+ul li strong {
+    color: #059669; /* Stronger green for emphasis */
+}
+
+/* Table styling for better readability and responsive behavior */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    border-radius: 0.75rem; /* Rounded corners for the whole table */
+    overflow: hidden; /* Ensures rounded corners are visible */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 1rem 1.25rem; /* More padding for cells */
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #d1fae5; /* Light green border for cells */
+}
+
+thead th {
+    background-color: #d1fae5; /* Light green background for headers */
+    color: #065f46; /* Dark green text for headers */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f0fdf4; /* Very light green for odd rows */
+}
+
+tbody tr:hover {
+    background-color: #e0f2f7; /* Light blue hover effect for rows */
+}
+
+/* Specific styling for the first column (단계) to make it stand out */
+tbody td:first-child {
+    font-weight: 600;
+    color: #166534; /* Dark green for step names */
+}
+
+/* Styling for text within table cells */
+tbody td strong {
+    color: #059669; /* Strong green for emphasized text in tables */
+}
+
+/* Footer styling */
+footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #d1fae5; /* Green border top */
+    text-align: center;
+    color: #64748b; /* Grayish blue for footer text */
+    font-size: 0.9rem;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #047857; /* Medium green for footer titles */
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+
+footer ul li {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+footer ul li strong {
+    color: #065f46;
+}
+
+/* Responsive table behavior for small screens */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        border: 1px solid #d1fae5;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #d1fae5;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    td:last-child {
+        border-bottom: 0;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 1rem;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: #4a5568;
+    }
+
+    td:nth-of-type(1):before { content: "단계"; }
+    td:nth-of-type(2):before { content: "시간"; }
+    td:nth-of-type(3):before { content: "활동 내용"; }
+    td:nth-of-type(4):before { content: "교사 발문/지도"; }
+    td:nth-of-type(5):before { content: "학생 활동"; }
+    td:nth-of-type(6):before { content: "파인만 기법 적용"; }
+}
+
+/* Styling for mathematical equations (LaTeX-like) */
+/* This is a simple styling for direct text. For actual LaTeX rendering, MathJax or KaTeX would be needed. */
+/* For this example, we're just making them look distinct. */
+span.math-equation {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #333;
+}
